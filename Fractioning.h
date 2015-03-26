@@ -25,6 +25,7 @@ extern Fraction FractionMake(Nominator n, Denominator d);
 extern Decimal FractionDecimal(Fraction f);
 extern Fraction FractionInvert(Fraction f);
 extern Accuracy FractionAccuracy(Fraction f, Decimal d);
+extern Accuracy FractionInvertedAccuracy(Fraction f, Decimal d);
 extern Fraction FractionWithDenominator(Fraction f, Denominator d);
 extern Fraction FractionFromDecimal(Decimal d, Accuracy min, Denominator max);
 

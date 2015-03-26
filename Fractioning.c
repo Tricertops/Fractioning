@@ -33,8 +33,14 @@ Fraction FractionInvert(Fraction f) {
 }
 
 
-Accuracy FractionAccuracy(Fraction f, Decimal B) {
-    Accuracy a = FractionDecimal(f) - B;
+Accuracy FractionAccuracy(Fraction f, Decimal d) {
+    Accuracy a = FractionDecimal(f) - d;
+    return (a < 0? -a : a);
+}
+
+
+Accuracy FractionInvertedAccuracy(Fraction f, Decimal d) {
+    Accuracy a = 1/FractionDecimal(f) - 1/d;
     return (a < 0? -a : a);
 }
 
@@ -56,8 +62,8 @@ Fraction FractionFromDecimal(Decimal target, Accuracy accuracy, Denominator deno
     Fraction final = lower;
     Accuracy finalAccuracy = target;
     while (final.denominator < denominator && finalAccuracy >= accuracy) {
-        Accuracy lowerAccuracy = FractionAccuracy(lower, target);
-        Accuracy upperAccuracy = FractionAccuracy(upper, target);
+        Accuracy lowerAccuracy = (invert? FractionInvertedAccuracy(lower, target) : FractionAccuracy(lower, target));
+        Accuracy upperAccuracy = (invert? FractionInvertedAccuracy(upper, target) : FractionAccuracy(upper, target));
         _Bool lowerIsBetter = (lowerAccuracy <= upperAccuracy);
         final = (lowerIsBetter? lower : upper);
         finalAccuracy = (lowerIsBetter? lowerAccuracy : upperAccuracy);
