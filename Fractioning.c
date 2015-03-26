@@ -51,28 +51,24 @@ Fraction FractionWithDenominator(Fraction f, Denominator d) {
 }
 
 
-Fraction FractionFromDecimal(Decimal target, Accuracy accuracy, Denominator denominator) {
+Fraction FractionFromDecimal(Decimal target, Accuracy desiredAccuracy, Denominator maxDenominator) {
     _Bool negate = (target < 0);
     target = (negate? -target : target);
     _Bool invert = (target > 1);
     target = (invert? 1/target : target);
     
-    Fraction lower = FractionMake(0, 1);
-    Fraction upper = FractionMake(1, 1);
-    Fraction final = lower;
-    Accuracy finalAccuracy = target;
-    while (final.denominator < denominator && finalAccuracy >= accuracy) {
-        Accuracy lowerAccuracy = (invert? FractionInvertedAccuracy(lower, target) : FractionAccuracy(lower, target));
-        Accuracy upperAccuracy = (invert? FractionInvertedAccuracy(upper, target) : FractionAccuracy(upper, target));
-        _Bool lowerIsBetter = (lowerAccuracy <= upperAccuracy);
-        final = (lowerIsBetter? lower : upper);
-        finalAccuracy = (lowerIsBetter? lowerAccuracy : upperAccuracy);
-        lower = FractionMake(final.nominator, final.denominator + 1);
-        upper = FractionMake(final.nominator + 1, final.denominator + 1);
+    Fraction fraction = FractionMake(0, 1);
+    Accuracy accuracy = target;
+    while (fraction.denominator < maxDenominator) {
+        accuracy = (invert? FractionInvertedAccuracy(fraction, target) : FractionAccuracy(fraction, target));
+        if (accuracy <= desiredAccuracy)
+            break;
+        fraction.denominator ++;
+        fraction.nominator = (Nominator)(fraction.denominator * target + 0.5);
     }
-    final = (invert? FractionInvert(final) : final);
-    final.nominator = (negate? -final.nominator : final.nominator);
-    return final;
+    fraction = (invert? FractionInvert(fraction) : fraction);
+    fraction.nominator = (negate? -fraction.nominator : fraction.nominator);
+    return fraction;
 }
 
 

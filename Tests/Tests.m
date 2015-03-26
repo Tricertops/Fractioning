@@ -70,10 +70,10 @@
     }
     
     [self measureBlock:^{
-        for (NSUInteger index = 0; index < 100; index++) {
-            Fraction f = FractionFromDecimal(x, 0.0000001, 100000);
-            XCTAssertEqual(f.nominator, 75948);
-            XCTAssertEqual(f.denominator, 24175U);
+        {
+            Fraction f = FractionFromDecimal(x, DBL_EPSILON, ULONG_MAX);
+            XCTAssertEqual(f.nominator, 245850922);
+            XCTAssertEqual(f.denominator, 78256779U);
         }
     }];
 }
