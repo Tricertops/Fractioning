@@ -9,7 +9,8 @@
 /* Begin PBXBuildFile section */
 		5B1474191AC48A1000D7AA98 /* Fractioning.c in Sources */ = {isa = PBXBuildFile; fileRef = 5B14740E1AC4888B00D7AA98 /* Fractioning.c */; };
 		5B1474231AC48A2600D7AA98 /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B1474221AC48A2600D7AA98 /* Tests.m */; };
-		5B1474241AC48A2600D7AA98 /* libFractioning.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B1474151AC48A0600D7AA98 /* libFractioning.a */; };
+		5B1474241AC48A2600D7AA98 /* libFractioning OS X.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B1474151AC48A0600D7AA98 /* libFractioning OS X.a */; };
+		5B1474411AC54BE800D7AA98 /* Fractioning.c in Sources */ = {isa = PBXBuildFile; fileRef = 5B14740E1AC4888B00D7AA98 /* Fractioning.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,10 +26,11 @@
 /* Begin PBXFileReference section */
 		5B14740E1AC4888B00D7AA98 /* Fractioning.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Fractioning.c; sourceTree = "<group>"; };
 		5B1474101AC4892D00D7AA98 /* Fractioning.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Fractioning.h; sourceTree = "<group>"; };
-		5B1474151AC48A0600D7AA98 /* libFractioning.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFractioning.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B1474151AC48A0600D7AA98 /* libFractioning OS X.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libFractioning OS X.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B14741E1AC48A2600D7AA98 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B1474211AC48A2600D7AA98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B1474221AC48A2600D7AA98 /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
+		5B1474471AC54BE800D7AA98 /* libFractioning iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libFractioning iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,7 +45,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B1474241AC48A2600D7AA98 /* libFractioning.a in Frameworks */,
+				5B1474241AC48A2600D7AA98 /* libFractioning OS X.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B1474421AC54BE800D7AA98 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,8 +72,9 @@
 		5B1474051AC4886C00D7AA98 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5B1474151AC48A0600D7AA98 /* libFractioning.a */,
+				5B1474151AC48A0600D7AA98 /* libFractioning OS X.a */,
 				5B14741E1AC48A2600D7AA98 /* Tests.xctest */,
+				5B1474471AC54BE800D7AA98 /* libFractioning iOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -88,12 +98,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5B1474431AC54BE800D7AA98 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		5B1474141AC48A0600D7AA98 /* Fractioning */ = {
+		5B1474141AC48A0600D7AA98 /* Fractioning OS X */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5B1474161AC48A0600D7AA98 /* Build configuration list for PBXNativeTarget "Fractioning" */;
+			buildConfigurationList = 5B1474161AC48A0600D7AA98 /* Build configuration list for PBXNativeTarget "Fractioning OS X" */;
 			buildPhases = (
 				5B1474111AC48A0600D7AA98 /* Sources */,
 				5B1474121AC48A0600D7AA98 /* Frameworks */,
@@ -103,9 +120,9 @@
 			);
 			dependencies = (
 			);
-			name = Fractioning;
+			name = "Fractioning OS X";
 			productName = Fractioning;
-			productReference = 5B1474151AC48A0600D7AA98 /* libFractioning.a */;
+			productReference = 5B1474151AC48A0600D7AA98 /* libFractioning OS X.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		5B14741D1AC48A2600D7AA98 /* Tests */ = {
@@ -125,6 +142,23 @@
 			productName = Tests;
 			productReference = 5B14741E1AC48A2600D7AA98 /* Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5B14743F1AC54BE800D7AA98 /* Fractioning iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5B1474441AC54BE800D7AA98 /* Build configuration list for PBXNativeTarget "Fractioning iOS" */;
+			buildPhases = (
+				5B1474401AC54BE800D7AA98 /* Sources */,
+				5B1474421AC54BE800D7AA98 /* Frameworks */,
+				5B1474431AC54BE800D7AA98 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Fractioning iOS";
+			productName = Fractioning;
+			productReference = 5B1474471AC54BE800D7AA98 /* libFractioning iOS.a */;
+			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
@@ -155,8 +189,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5B1474141AC48A0600D7AA98 /* Fractioning */,
+				5B1474141AC48A0600D7AA98 /* Fractioning OS X */,
 				5B14741D1AC48A2600D7AA98 /* Tests */,
+				5B14743F1AC54BE800D7AA98 /* Fractioning iOS */,
 			);
 		};
 /* End PBXProject section */
@@ -188,12 +223,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5B1474401AC54BE800D7AA98 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B1474411AC54BE800D7AA98 /* Fractioning.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
 		5B1474261AC48A2600D7AA98 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 5B1474141AC48A0600D7AA98 /* Fractioning */;
+			target = 5B1474141AC48A0600D7AA98 /* Fractioning OS X */;
 			targetProxy = 5B1474251AC48A2600D7AA98 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -262,7 +305,6 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				ONLY_ACTIVE_ARCH = YES;
 				RUN_CLANG_STATIC_ANALYZER = YES;
-				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -324,7 +366,6 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				RUN_CLANG_STATIC_ANALYZER = YES;
-				SDKROOT = macosx;
 			};
 			name = Release;
 		};
@@ -337,6 +378,7 @@
 					"$(inherited)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -345,6 +387,7 @@
 			buildSettings = {
 				EXECUTABLE_PREFIX = lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
@@ -363,6 +406,7 @@
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -377,6 +421,29 @@
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		5B1474451AC54BE800D7AA98 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		5B1474461AC54BE800D7AA98 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 			};
 			name = Release;
 		};
@@ -392,13 +459,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5B1474161AC48A0600D7AA98 /* Build configuration list for PBXNativeTarget "Fractioning" */ = {
+		5B1474161AC48A0600D7AA98 /* Build configuration list for PBXNativeTarget "Fractioning OS X" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5B1474171AC48A0600D7AA98 /* Debug */,
 				5B1474181AC48A0600D7AA98 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5B1474271AC48A2600D7AA98 /* Build configuration list for PBXNativeTarget "Tests" */ = {
 			isa = XCConfigurationList;
@@ -407,6 +475,16 @@
 				5B1474291AC48A2600D7AA98 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5B1474441AC54BE800D7AA98 /* Build configuration list for PBXNativeTarget "Fractioning iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B1474451AC54BE800D7AA98 /* Debug */,
+				5B1474461AC54BE800D7AA98 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
