@@ -166,7 +166,7 @@
 		5B1473FC1AC4886C00D7AA98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0620;
+				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = Triceratops;
 				TargetAttributes = {
 					5B1474141AC48A0600D7AA98 = {
@@ -372,6 +372,7 @@
 		5B1474171AC48A0600D7AA98 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				EXECUTABLE_PREFIX = lib;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -385,6 +386,7 @@
 		5B1474181AC48A0600D7AA98 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				EXECUTABLE_PREFIX = lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
