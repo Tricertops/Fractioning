@@ -57,7 +57,8 @@ Fraction FractionFromDecimal(Decimal target, Accuracy desiredAccuracy, Denominat
     _Bool invert = (target > 1);
     target = (invert? 1/target : target);
     
-    Fraction fraction = FractionMake(0, 1);
+    _Bool closerToOne = (target >= 0.5);
+    Fraction fraction = FractionMake((closerToOne? 1 : 0), 1);
     Accuracy accuracy = target;
     while (fraction.denominator < maxDenominator) {
         accuracy = (invert? FractionInvertedAccuracy(fraction, target) : FractionAccuracy(fraction, target));
