@@ -166,7 +166,7 @@
 		5B1473FC1AC4886C00D7AA98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = Triceratops;
 				TargetAttributes = {
 					5B1474141AC48A0600D7AA98 = {
@@ -179,10 +179,11 @@
 			};
 			buildConfigurationList = 5B1473FF1AC4886C00D7AA98 /* Build configuration list for PBXProject "Fractioning" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 5B1473FB1AC4886C00D7AA98;
 			productRefGroup = 5B1474051AC4886C00D7AA98 /* Products */;
